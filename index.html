@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOP-RPS</title>
+    <script>
+        let options = [
+            "rock",
+            "raper",
+            "scissors"
+        ]
+        function computerPlay(){
+            return options[Math.floor(Math.random() *3)];
+        }
+
+        function play(player, computer){
+            let cast = player.toLowerCase();
+            switch (cast){
+                case "rock":
+                    if(computer == "paper"){
+                        return -1;
+                    }else if(computer == "scissors"){
+                        return 1;
+                    }
+                case "scissors":
+                    if(computer == "paper"){
+                        return 1;
+                    }else if(computer == "rock"){
+                        return -1;
+                    }
+                case "paper":
+                    if(computer == "rock"){
+                        return 1;
+                    }else if(computer == "scissors"){
+                        return -1;
+                    }
+                default:
+                    return 0;
+                    break;
+            }
+        }
+        
+        function game(){
+            let playerWins = 0;
+            let computerWins = 0;
+            while(playerWins < 5 || computerWins < 5){
+                let player = prompt("What is your choice? Pick rock, paper, or scissors");
+                let computer = computerPlay();
+                let result = play(player,computer);
+                if(result == -1){
+                    alert("The computer won this round. Computer wins: " + computerWins + " Player wins: " + playerWins);
+                    computerWins++;
+                }else if(result == 1){
+                    playerWins++;
+                    alert("You won this round Computer wins: "+ computerWins + " Player wins: " + playerWins);
+                }else{
+                    alert("This was a draw! Computer wins: "+ computerWins + " Player wins: " + playerWins);
+                }
+            }
+            if(playerWins == 5){
+                console.log("You won the game!");
+            }else{
+                console.log("The computer won the game!");
+            }
+        }
+        game();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
