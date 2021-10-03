@@ -16,7 +16,15 @@
         }
 
         function play(player, computer){
+            if(player == null){
+                alert("Please enter your choice");
+                return;
+            }
             let cast = player.toLowerCase();
+            if(!(cast == "rock"||cast == "scissors"||cast == "paper")){
+                alert("Invalid choice");
+                return;
+            }
             switch (cast){
                 case "rock":
                     if(computer == "paper"){
@@ -47,16 +55,20 @@
             let computerWins = 0;
             while(playerWins < 5 || computerWins < 5){
                 let player = prompt("What is your choice? Pick rock, paper, or scissors");
+                if(player === null){
+                    alert("Thanks for playing, if you want to play again refresh the page");
+                    return;
+                }
                 let computer = computerPlay();
                 let result = play(player,computer);
                 if(result == -1){
-                    alert("The computer won this round. Computer wins: " + computerWins + " Player wins: " + playerWins);
                     computerWins++;
+                    alert("The computer won this round. Computer wins: " + computerWins + " Player wins: " + playerWins);
                 }else if(result == 1){
                     playerWins++;
                     alert("You won this round Computer wins: "+ computerWins + " Player wins: " + playerWins);
                 }else{
-                    alert("This was a draw! Computer wins: "+ computerWins + " Player wins: " + playerWins);
+                    alert("No winner! Computer wins: "+ computerWins + " Player wins: " + playerWins);
                 }
             }
             if(playerWins == 5){
