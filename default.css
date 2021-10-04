@@ -1,0 +1,51 @@
+body{
+    text-align: center;
+    background-color: rgb(209, 205, 201);
+}
+h1{
+    font-size: 40px;
+}
+#scoreBoardSection, #instructions{
+    background-color: antiquewhite;
+}
+#scoreBoard{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding-bottom: 30px;
+}
+.score{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 900;
+}
+#playerScore , #compScore{
+    font-size:20px;
+    font-weight:500;
+}
+.rps-image{
+    border-radius: 50%;
+    margin:2em;
+    width: 150px;
+    height: 150px;
+}
+#scoreBoardSection{
+    margin: 2em 20% 0 20%;
+    border-radius: 10px;
+    padding: 2em 0;
+}
+#instructions{
+    margin: 2em auto 0 auto;
+    border-radius: 10px;
+    padding: 2em 1em;
+    width: 20%;
+}
+.gameButton{
+    background-color: black;
+    color: antiquewhite;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    padding:0 1em;
+}
